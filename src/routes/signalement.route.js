@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import { createSignalement, getSignalements, updateSignalement,getMachineSignalements } from '../controllers/signalement.controller.js';
+import { protect } from '../middlewares/auth.middleware.js';
 
 const router = Router();
 
-router.post('/', createSignalement);
-router.get('/', getSignalements);
-router.put('/:id', updateSignalement);
-router.get('/:id/signalements', getMachineSignalements);
+router.post('/',protect, createSignalement);
+router.get('/',protect, getSignalements);
+router.put('/:id',protect, updateSignalement);
+router.get('/:id/signalements',protect, getMachineSignalements);
 
 export default router;

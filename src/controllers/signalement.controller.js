@@ -1,5 +1,5 @@
 import machine from "../Models/machine.model";
-import signalement from "../Models/signalement.machine.js";
+import signalement from "../Models/signalement.model.js";
 
 export async function addasignalement(params) {
     try{
